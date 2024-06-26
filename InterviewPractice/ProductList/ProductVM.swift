@@ -19,7 +19,6 @@ import SwiftUI
         do{
             products = try await apiManager.request(urlString: "https://fakestoreapi.com/products")
            // print(products)
-            sahjfgh = products()
         } catch {
             print("Fetch product error: ", error)
             
