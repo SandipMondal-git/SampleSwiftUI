@@ -29,7 +29,7 @@ final class InterviewPracticeTests: XCTestCase {
         let apiManager = ApiManager()
         do {
             let data : [Product] = try await apiManager.request(urlString: "https://fakestoreapi.com/products")
-            XCTAssertNil(data)
+            XCTAssertNotNil(data)
             //XCTAssertIdentical(data as AnyObject, [Product].self as AnyObject)
             
             assert((data as Any) is [Product])
