@@ -21,6 +21,7 @@ import SwiftUI
            // print(products)
         } catch {
             print("Fetch product error: ", error)
+            
         }
         
     }
