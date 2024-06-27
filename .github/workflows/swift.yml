@@ -21,5 +21,5 @@ jobs:
     - name: Build
       run: swift build -v
     - name: Run tests
-      run: swift InterviewPractic -v
+      run: swift test
       
