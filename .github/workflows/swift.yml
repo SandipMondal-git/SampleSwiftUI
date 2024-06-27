@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Swift
-      uses: swift-actions/setup-swift@v1
-      with:
-        swift-version: '5.9.2'  # Adjust to your Swift version
+      - name: Set up Swift
+        uses: swift-actions/setup-swift@v1
+        with:
+          swift-version: '5.9.2'  # Update to your Swift version
 
-    - name: Build
-      run: swift build --build-tests
+      - name: Build
+        run: swift build --build-tests
 
-    - name: Test and generate code coverage
-        run: | 
+      - name: Test and generate code coverage
+        run: |
           swift test --enable-code-coverage --sanitize=thread
           mkdir -p ./coverage
           llvm-cov export -format=lcov ./debug/YourTargetNamePackageTests.xctest/Contents/MacOS/YourTargetNamePackageTests -instr-profile ./debug/YourTargetNamePackageTests.xctest/Contents/MacOS/YourTargetNamePackageTests.profdata > ./coverage/lcov.info
