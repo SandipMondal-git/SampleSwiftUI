@@ -26,8 +26,7 @@ jobs:
         run: |
           swift test --enable-code-coverage --sanitize=thread
           mkdir -p ./coverage
-          llvm-cov export -format=lcov ./debug/YourTargetNamePackageTests.xctest/Contents/MacOS/YourTargetNamePackageTests -instr-profile ./debug/YourTargetNamePackageTests.xctest/Contents/MacOS/YourTargetNamePackageTests.profdata > ./coverage/lcov.info
-
+          llvm-cov export -format=lcov .build/debug/YourTargetNamePackageTests.xctest -instr-profile .build/debug/YourTargetNamePackageTests.profdata > ./coverage/lcov.info
       - name: Upload code coverage
         uses: coverallsapp/github-action@v1.1.2
         with:
